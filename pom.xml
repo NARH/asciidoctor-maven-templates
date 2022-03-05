@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.narh</groupId>
+  <artifactId>asciidoc-templates</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>asciidoc-templates</name>
+  <url>http://github.com/narh/asciidoctor-maven-templates</url>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- https://mvnrepository.com/artifact/org.asciidoctor/asciidoctor-maven-plugin -->
+        <groupId>org.asciidoctor</groupId>
+        <artifactId>asciidoctor-maven-plugin</artifactId>
+        <version>2.2.2</version>
+        <executions>
+          <execution>
+            <id>asciidoc-to-html</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>process-asciidoc</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <!-- https://mvnrepository.com/artifact/org.asciidoctor/asciidoctor-maven-plugin -->
+          <dependency>
+            <groupId>org.asciidoctor</groupId>
+            <artifactId>asciidoctor-maven-plugin</artifactId>
+            <version>2.2.2</version>
+          </dependency>
+          <!-- https://mvnrepository.com/artifact/org.asciidoctor/asciidoctorj-diagram -->
+          <dependency>
+            <groupId>org.asciidoctor</groupId>
+            <artifactId>asciidoctorj-diagram</artifactId>
+            <version>2.2.1</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <requires>
+            <require>asciidoctor-diagram</require>
+          </requires>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+<!-- vim:set ts=2 sw=2 sts=2 -->
